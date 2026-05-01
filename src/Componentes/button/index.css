@@ -1,0 +1,15 @@
+.form_btn {
+    background-color: rgb(0, 255, 55);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 12%;
+    height: 50px;
+    border-radius: 12px;
+    margin-left: 35%;
+    margin-top: 5%;
+}
+.form_btn:hover {
+    background-color:aqua;
+
+}
+

@@ -1,7 +1,9 @@
+import './index.css'
 export default function TituloFormulario(props) {
     return (
         <>
-            <h2>{props.titulo}</h2>
+            <h2 className="titulo-form">
+                {props.titulo}</h2>
         </>
     )
 }

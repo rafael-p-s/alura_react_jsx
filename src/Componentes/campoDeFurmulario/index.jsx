@@ -1,12 +1,10 @@
-import TituloFormulario from "../titulo_formulario";
-
-export default function CampoDeFormulario({ htmlFor, labelText, type, id, placeholder }) {
+import "./index.css"
+export default function CampoDeFormulario({ name, labelText, ...inputProps }) {
     return (
         <>
-            <fieldset>
-                <TituloFormulario titulo="Preencha para criar um evento" />
-                <label htmlFor={htmlFor}>{labelText}</label>
-                <input type={type} id={id} placeholder={placeholder} />
+            <fieldset className="campo-form">
+                <label htmlFor={name} className="label">{labelText}</label>
+                <input id={name} {...inputProps} className="campo-input" />
             </fieldset>
         </>
     )
