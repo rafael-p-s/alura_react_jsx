@@ -4,7 +4,7 @@ export default function CampoDeFormulario({ name, labelText, ...inputProps }) {
         <>
             <fieldset className="campo-form">
                 <label htmlFor={name} className="label">{labelText}</label>
-                <input id={name} {...inputProps} className="campo-input" />
+                <input id={name} name={name} {...inputProps} className="campo-input" />
             </fieldset>
         </>
     )

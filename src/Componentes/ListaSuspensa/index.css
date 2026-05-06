@@ -18,3 +18,8 @@
     line-height: 12%;
     color: #fff
 }
+
+.lista_suspensa option {
+    color: #000;
+    background-color: #fff;
+}

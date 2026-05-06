@@ -32,6 +32,11 @@ const eventos = [
   }
 ]
 
+function adicionarEvento(e) {
+  eventos.push(e)
+  console.log("eventos => ", eventos)
+}
+
 export default function App() {
   return (
     <main>
@@ -41,16 +46,16 @@ export default function App() {
       <section className='section_banner'>
         <img src="/banner.png" alt="" />
       </section>
-      <FormularioDeEvento />
+      <FormularioDeEvento temas={temas} aoSubmeter={adicionarEvento}/>
       {temas.map((tema) => (
         <section className="section_temas" key={tema.id}>
           <Tema tema={tema} />
 
-          {eventos
-            .filter((evento) => evento.tema.id === tema.id)
-            .map((evento) => (
-              <CardEvento key={evento.titulo} evento={evento} />
-            ))}
+          {eventos.map((item,index) => {
+            return (
+              <CardEvento key={index} evento={item} />
+            )
+          })}
         </section>
       ))}
     </main>
