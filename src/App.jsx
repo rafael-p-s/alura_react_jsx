@@ -56,16 +56,32 @@ export default function App() {
         <img src="/banner.png" alt="" />
       </section>
       <FormularioDeEvento temas={temas} aoSubmeter={adicionarEvento} />
-      {temas.map((tema) => (
-        <section className="section_temas" key={tema.id}>
-          <Tema tema={tema} />
-          {eventos
-            .filter(evento => evento.tema.id === tema.id)
-            .map((item, index) => (
-              <CardEvento key={index} evento={item} />
-            ))}
-        </section>
-      ))}
+      <section className="container">
+        {temas.map((tema) => {
+          const eventosDoTema = eventos.filter(
+            evento => evento.tema.id === tema.id
+          )
+
+          if (eventosDoTema.length === 0) {
+            return null
+          }
+
+          return (
+            <section className="section_temas" key={tema.id}>
+              <Tema tema={tema} />
+
+              <div className="eventos">
+                {eventosDoTema.map((item, index) => (
+                  <CardEvento
+                    key={index}
+                    evento={item}
+                  />
+                ))}
+              </div>
+            </section>
+          )
+        })}
+      </section>
     </main>
   )
 }
